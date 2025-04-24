@@ -12,13 +12,14 @@ const User = require("./Model/userModel");
 const CommentModel = require("./Model/Comment");
 const {setNotification} = require('./controllers/NotificationControllers/CentralNotification');
 const NotificationModel = require("./Model/Notification");
+const {supportedorigin} = require("./Config/origin")
 dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: supportedorigin,
     credentials: true,
   })
 );
